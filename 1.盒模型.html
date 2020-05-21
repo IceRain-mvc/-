@@ -9,13 +9,33 @@
       height: 100px;
       background-color: blue;
       border: 20px solid #cccccc;
+
+      /*盒模型就是IE盒模型*/
+      box-sizing: border-box;
+      /*标准盒模型 (默认)*/
+      /*box-sizing: content-box;*/
     }
 
   </style>
 </head>
 <body>
-  <div id="box">
+  <div id="box" >
 
   </div>
+
+  <script>
+    let oBox = document.getElementById("box");
+
+    /*缺点: 通过这种方式 只能获取行内样式 获取不到内嵌和外链样式*/
+    // console.log(oBox.style.width);
+
+    /*方式二 通用*/
+    // console.log(window.getComputedStyle(oBox).width);
+
+    /*方式三 IE*/
+    console.log(oBox.currentStyle.width);
+
+
+  </script>
 </body>
 </html>
