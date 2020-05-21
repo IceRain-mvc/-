@@ -4,8 +4,8 @@
   - 小白 content padding margin 2分 
   - 标准盒模型、IE盒模型 2分 
   - css控制这两种盒模型  2分 
-  - js如何设置 获取盒模型对应的宽高 //element.style.width 
-  - 解决边距重叠问题 
+  - js如何设置 获取盒模型对应的宽高 //element.style.width  8分
+  - 解决边距重叠问题  2分
   - BFC (解决方案) 
 
 

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .top {
+
+      background-color: #3aff27;
+      margin-bottom: 50px;
+      /*BFC*/
+      overflow: hidden;
+    }
+
+    .inner {
+      width: 100px;
+      height: 100px;
+      background-color: #ff442a;
+      margin-bottom: 20px;
+    }
+    .bottom {
+      width: 200px;
+      height: 200px;
+      background-color: #e92eff;
+    }
+  </style>
+</head>
+<body>
+  <!--
+    标准文档刘中 竖直方向margin不叠加 只取较大的值作为margin  水平方向不存在这个问题
+
+    父容器和子容器在竖直方向上共用了同一个margin  此时就会出现边界重叠 问题
+  -->
+
+  <div class="top">
+    <div class="inner"></div>
+
+  </div>
+
+  <div class="bottom">
+
+  </div>
+</body>
+</html>

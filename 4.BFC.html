@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    #box {
+      background-color: pink;
+    }
+
+    .left {
+      width: 100px;
+      height: 100px;
+      background-color: blue;
+      color: #ffffff;
+      float: left;
+    }
+
+    .right {
+      height: 200px;
+      background-color: #e92eff;
+      color: #ffffff;
+      overflow: hidden;
+    }
+
+
+    .father {
+      background-color: pink;
+      margin-top: 100px;
+      overflow: hidden;
+    }
+
+    .son {
+      float: left;
+      background-color: green;
+      color: #ffffff;
+    }
+
+
+  </style>
+</head>
+<body>
+<!--
+  什么是BFC: 解决方案
+  Block Formatting Context 格式化块级上下文
+  你可以把他理解成一个独立的区域
+
+  解决那些问题:
+    margin重叠
+    float区域重叠问题
+    清除浮动
+
+  BFC通过什么手段解决上述问题
+    最常用的overflow
+    浮动中 float 值不为none
+    定位中 position 不是static或者relative
+    display inline-block table-cell  ... flex inline-flex
+
+
+
+-->
+
+
+<!--
+  float区域重叠
+  由于右侧div处在一个标准文档流中 比左侧高的时候 导致右侧有一部分跑到下面
+  通过BFC就可以解决当前问题 overflow:hidden
+-->
+<div id="box">
+  <div class="left"></div>
+  <div class="right">
+    人生就像愤怒的小鸟 失败的时候总有猪在笑 人生就像愤怒的小鸟
+    失败的时候总有猪在笑 人生就像愤怒的小鸟 失败的时候总有猪在笑 人生就像愤怒的小鸟 失败的时候总有猪在笑 人生就像愤怒的小鸟 失败的时候总有猪在笑 人生就像愤怒的小鸟 失败的时候总有猪在笑 人生就像愤怒的小鸟 失败的时候总有猪在笑
+    人生就像愤怒的小鸟 失败的时候总有猪在笑 人生就像愤怒的小鸟
+    失败的时候总有猪在笑 人生就像愤怒的小鸟 失败的时候总有猪在笑 人生就像愤怒的小鸟 失败的时候总有猪在笑 人生就像愤怒的小鸟 失败的时候总有猪在笑 人生就像愤怒的小鸟 失败的时候总有猪在笑 人生就像愤怒的小鸟 失败的时候总有猪在笑
+    人生就像愤怒的小鸟 失败的时候总有猪在笑
+    失败的时候总有猪在笑 人生就像愤怒的小鸟 失败的时候总有猪在笑 人生就像愤怒的小鸟 失败的时候总有猪在笑 人生就像愤怒的小鸟 失败的时候总有猪在笑 人生就像愤怒的小鸟 失败的时候总有猪在笑 人生就像愤怒的小鸟 失败的时候总有猪在笑
+    人生就像愤怒的小鸟 失败的时候总有猪在笑
+    失败的时候总有猪在笑 人生就像愤怒的小鸟 失败的时候总有猪在笑 人生就像愤怒的小鸟 失败的时候总有猪在笑 人生就像愤怒的小鸟 失败的时候总有猪在笑 人生就像愤怒的小鸟 失败的时候总有猪在笑 人生就像愤怒的小鸟 失败的时候总有猪在笑
+    人生就像愤怒的小鸟 失败的时候总有猪在笑
+  </div>
+
+
+</div>
+<!--
+  清除浮动
+
+  造成这个问题的原因是: 儿子浮动了 由于父亲没有设置高度 导致父亲看不到背景颜色
+
+  - 给父元素设置一个高度  才能关住浮动
+  - 通过BFC的方式解决
+
+  计算BFC高度的时候 浮动元素也会参与计算  在计算BFC高度的时候 子元素 float box 也参与计算
+
+-->
+
+<section class="father">
+  <div class="son">
+    生命一号
+  </div>
+</section>
+
+</body>
+</html>

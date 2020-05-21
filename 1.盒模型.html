@@ -30,10 +30,14 @@
     // console.log(oBox.style.width);
 
     /*方式二 通用*/
-    // console.log(window.getComputedStyle(oBox).width);
+    console.log(window.getComputedStyle(oBox).width);
 
-    /*方式三 IE*/
-    console.log(oBox.currentStyle.width);
+    /*方式三 IE独有的*/
+    // console.log(oBox.currentStyle.width);
+
+    /*方式四 : 获取一个元素的绝对位置 (区域)*/
+    console.log(oBox.getBoundingClientRect().width);
+
 
 
   </script>

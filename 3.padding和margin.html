@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    div {
+      border: 1px solid #cccccc;
+      width: 200px;
+      height: 200px;
+      background-color: #e92eff;
+    }
+    p {
+      margin-top: 50px;
+      height: 100px;
+      width: 100px;
+      background-color: blue;
+    }
+
+  </style>
+</head>
+<body>
+
+<!--
+  如果父盒子 没有 border 那么儿子的margin 实际上踹的是流
+  设置了border之后 踹的就是 父盒子
+
+  建议大家分开子盒子和父盒子的方法就是padding
+
+-->
+  <div>
+    <p></p>
+  </div>
+</body>
+</html>
